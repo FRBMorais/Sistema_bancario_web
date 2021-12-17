@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <table class="table table-striped table-responsive table-bordered">
+        <thead>
+            <tr>
+                <th>Operações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <form method="POST" action="/saldo">
+                        <p><button class="btn btn-primary" type="submit">Saldo</button></p>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="/deposito">
+                        <p><button class="btn btn-primary" type="submit">Deposito</button></p>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form method="POST" action="/transferencia">
+                        <p><button class="btn btn-primary" type="submit">Transferencia</button></p>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="/delete">
+                        <p><button class="btn btn-primary" type="submit">Deletar Conta</button></p>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<form method="POST" action="/logout">
+    <p><button class="btn btn-primary" type="submit">Log Out</button></p>
+</form>
+{% endblock %}
