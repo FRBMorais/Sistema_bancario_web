@@ -184,8 +184,9 @@ def transferenciafunf():
 
     cursor.execute("UPDATE card SET balance = ? WHERE number = ?",
                    (int(balanco1) - int(request.form['valor_transferido']), session['usuario_logado']))
-    if balanco1 < request.form['valor_transferido']:
+    if int(balanco1) < int(request.form['valor_transferido']):
         flash('Saldo insuficiente')
+        return redirect('/interno')
     else:
         cursor.execute("SELECT balance FROM card WHERE number = ?", (request.form['numero_conta_transferida'],))
         records = cursor.fetchall()
